@@ -1,0 +1,32 @@
+<div>
+  <form #myform="ngForm" (ngSubmit)="onFormSubmit(myform)">
+      <div class="form-group" [ngClass]="myinput.invalid? 'has-error': ''">
+        <label for="">Title:</label>
+        <input class="form-control" type="text" required minlength="2" ngModel name="title" #myinput="ngModel">
+        <div *ngIf="myinput.errors">
+            <span *ngIf="myinput.errors.required">
+                Name is required
+            </span>
+            <span *ngIf="myinput.errors.minlength">
+                Minimum character is 2
+            </span>
+        </div>
+      </div>
+      <div class="form-group">
+          <label for="">Price</label>
+          <input class="form-control" type="number" ngModel required name="price">
+      </div>
+      <div>
+          <input type="submit" value="Submit" class="btn btn-default">
+          <button (click)="resetForm(myform)" class="btn btn-default">Reset</button>
+      </div>
+    {{myform.value | json}}
+      <div *ngIf="myform.invalid">
+        Form is invalid
+      </div>
+  </form> 
+</div>
+
+<button (click)="setValue(myform)">Set Value</button>
+
+<button (click)="patchValue(myform)">Patch Value</button>

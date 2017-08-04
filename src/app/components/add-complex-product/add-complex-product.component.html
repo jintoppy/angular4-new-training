@@ -1,0 +1,20 @@
+<form #f="ngForm">
+
+  <div ngModelGroup="catalog">
+      <div>
+        Title <input type="text" ngModel name="title">
+      </div>
+      <div>
+          Description <input type="text" ngModel name="description">
+      </div>
+  </div>
+  <div>
+    Price <input type="text" ngModel name="price">
+  </div>
+  <div>
+    <input type="submit" value="Add">
+  </div>
+
+</form>
+
+{{f.value | json}}
