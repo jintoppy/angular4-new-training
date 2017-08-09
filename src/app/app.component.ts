@@ -7,8 +7,8 @@ import {ProductService} from './product.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  inputVal ="My INput value";
+  title = 'Shopping Cart';
+  inputVal = `My INput value is ${this.title}`;
   products= [];
   constructor(private service: ProductService){
 

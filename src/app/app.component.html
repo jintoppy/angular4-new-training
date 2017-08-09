@@ -1,14 +1,16 @@
 <div id="container">
     <div id="header-area">
-        <h1>
-            Welcome to {{title}}!!
-          </h1>        
-        <app-header></app-header>  
+          <h1>
+            {{title | uppercase | productName}}!!
+          </h1>
+          <h1>
+            {{title | productName | uppercase}}!!
+          </h1>
+          <input type="text" [(ngModel)]="title">     
+          <app-header></app-header>   
       </div>
       <div id="wrapper">
           <div id="sidebar">
-                <app-add-product-reactive [myTitle]="title" [myList]=""></app-add-product-reactive>
-              
           </div>
           <div id="content-area">
               <app-product-display 

@@ -11,6 +11,8 @@ export class AddProductReactiveComponent implements OnInit {
   myTitle: string;
   @Input()
   myList: Array<Object>;
+  someName = 'THIS IS A trial one. It is different cases';
+  someDate;
   myForm: FormGroup;
   private validationsArray: Array<ValidatorFn> = [Validators.required, Validators.minLength(2), this.customUserNameValidationFn.bind(this)]
   constructor() { }
@@ -26,6 +28,7 @@ export class AddProductReactiveComponent implements OnInit {
 
   onFormSubmit(){
     console.log(this.myForm.value);
+    this.someDate = 1502294267650;
   }
   
   customUserNameValidationFn(c: FormControl){

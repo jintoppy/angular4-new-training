@@ -29,4 +29,11 @@
   <span *ngIf="myForm.invalid">
     This form is invalid
   </span>
+
+  <br/>
+  With Pipe - {{someName | productName}}
+  <br/>
+  Without Pipe - {{someName}}
+  <br/>
+  {{someDate | date:'MM/dd'}}
 </div>

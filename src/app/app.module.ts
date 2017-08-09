@@ -10,6 +10,7 @@ import {AuthService} from './auth.service';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { AddComplexProductComponent } from './components/add-complex-product/add-complex-product.component';
 import { AddProductReactiveComponent } from './components/add-product-reactive/add-product-reactive.component';
+import { ProductNamePipe } from './product-name.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddProductReactiveComponent } from './components/add-product-reactive/a
     HeaderComponent,
     AddProductComponent,
     AddComplexProductComponent,
-    AddProductReactiveComponent
+    AddProductReactiveComponent,
+    ProductNamePipe
   ],
   imports: [
     BrowserModule,
