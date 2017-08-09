@@ -1,0 +1,32 @@
+<div>
+
+  <h2>
+    {{myTitle}}
+  </h2>
+  <form [formGroup]="myForm" (ngSubmit)="onFormSubmit()">
+    <div formGroupName="profile">
+
+    
+    Username: <input type="text" formControlName="username">
+    <div *ngIf="myForm.get('profile').get('username').errors">
+      <span *ngIf="myForm.get('profile').get('username').errors.required">This field is required</span> <br/>
+      <span *ngIf="myForm.get('profile').get('username').errors.minlength">MinLength is 2</span><br/>
+      <span *ngIf="myForm.get('profile').get('username').errors.startsWithA">Should not start with a</span><br/>
+    </div>
+
+    <br />
+
+    Password: <input type="password" formControlName="password">
+      <div *ngIf="myForm.get('profile').get('password').errors">
+        <span *ngIf="myForm.get('profile').get('password').errors.required">Password field is required</span>
+      </div>
+    <br />
+  </div>
+    <input type="submit" value="Login">
+
+
+  </form>
+  <span *ngIf="myForm.invalid">
+    This form is invalid
+  </span>
+</div>
